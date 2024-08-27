@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>View Students</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Student List</h2>
+<a href="#" th:href="@{/students/add}">Add New Student</a>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Grade</th>
+            <th>Mobile Number</th>
+            <th>Department</th>
+   
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="student : ${students}">
+            <td th:text="${student.id}"></td>
+            <td th:text="${student.name}"></td>
+            <td th:text="${student.grade}"></td>
+            <td th:text="${student.mobileNumber}"></td>
+            <td th:text="${student.department}"></td>
+
+            <td>
+                <a href="#" th:href="@{/students/edit/{id}(id=${student.id})}">Edit</a> |
+                <a href="#" th:href="@{/students/delete/{id}(id=${student.id})}" onclick="return confirm('Are you sure?');">Delete</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<table>
+    <thead>
+        <tr>
+        
+            <th>School Name (SSLC)</th>
+            <th>Year of Passing (SSLC)</th>
+            <th>Percentage (SSLC)</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="student : ${students}">
+ 
+            <td th:text="${student.schoolNameSSLC}"></td>
+            <td th:text="${student.yearOfPassingSSLC}"></td>
+            <td th:text="${student.percentageSSLC}"></td>
+            <td>
+                <a href="#" th:href="@{/students/edit/{id}(id=${student.id})}">Edit</a> |
+                <a href="#" th:href="@{/students/delete/{id}(id=${student.id})}" onclick="return confirm('Are you sure?');">Delete</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<table>
+    <thead>
+        <tr>
+        
+            <th>School Name (HSC)</th>
+            <th>Year of Passing (HSC)</th>
+            <th>Percentage (HSC)</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="student : ${students}">
+ 
+            <td th:text="${student.schoolNameHSC}"></td>
+            <td th:text="${student.yearOfPassingHSC}"></td>
+            <td th:text="${student.percentageHSC}"></td>
+            <td>
+                <a href="#" th:href="@{/students/edit/{id}(id=${student.id})}">Edit</a> |
+                <a href="#" th:href="@{/students/delete/{id}(id=${student.id})}" onclick="return confirm('Are you sure?');">Delete</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<table>
+    <thead>
+        <tr>
+        
+            <th>School Name (UG)</th>
+            <th>Year of Passing (UG)</th>
+            <th>Percentage (UG)</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="student : ${students}">
+ 
+            <td th:text="${student.schoolNameUG}"></td>
+            <td th:text="${student.yearOfPassingUG}"></td>
+            <td th:text="${student.percentageUG}"></td>
+            <td>
+                <a href="#" th:href="@{/students/edit/{id}(id=${student.id})}">Edit</a> |
+                <a href="#" th:href="@{/students/delete/{id}(id=${student.id})}" onclick="return confirm('Are you sure?');">Delete</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<table>
+    <thead>
+        <tr>
+        
+            <th>School Name (PG)</th>
+            <th>Year of Passing (PG)</th>
+            <th>Percentage (PG)</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="student : ${students}">
+ 
+            <td th:text="${student.schoolNamePG}"></td>
+            <td th:text="${student.yearOfPassingPG}"></td>
+            <td th:text="${student.percentagePG}"></td>
+            <td>
+                <a href="#" th:href="@{/students/edit/{id}(id=${student.id})}">Edit</a> |
+                <a href="#" th:href="@{/students/delete/{id}(id=${student.id})}" onclick="return confirm('Are you sure?');">Delete</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
